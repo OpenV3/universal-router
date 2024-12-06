@@ -202,6 +202,16 @@ forge script --broadcast \
 script/deployParameters/Deploy<network>.s.sol:Deploy<network>
 ```
 
+```shell
+# to verify the contract
+forge verify-contract <deployed_address> contracts/UniversalRouter.sol:UniversalRouter \
+    --chain <chain_id> \
+    --etherscan-api-key zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz \
+    --verifier-url <explorer_api_url> \
+    --constructor-args \
+    "(<permit2_address>,<weth9_address>,<v2_factory_address>,<v3_factory_address>,<pair_init_code_hash>,<pool_init_code_hash>,<v4_pool_manager_address>,<v3_nft_position_manager_address>,<v4_position_manager_address>)"
+```
+
 ### To Deploy and Verify
 
 ```console
